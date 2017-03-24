@@ -1,38 +1,23 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Javascript Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
         <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     </script>
     -->
-    <style>
-        #frame {
-            border: 4px solid black;
-            display: inline-block;
-            padding: 8px;
-        }
-        
-        #screen {
-            font-size: 26px;
-            width: 200px;
-            height: 30px;
-            border: 2px solid black;
-            padding-top: 6px;
-            margin-bottom: 8px;
-        }
-        
-        button {
-            font-size: 18px;
-            margin: 2px;
-        }
-    </style>
+    <!-- build:css css/style.min.css -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- /build -->
 </head>
 
 <body>
     <div id="frame">
-        <div id="screen"></div>
+        <div id="screen" dir="rtl"></div>
         <div class="row">
             <button id="7" onclick="calc(id)">7</button>
             <button id="8" onclick="calc(id)">8</button>
