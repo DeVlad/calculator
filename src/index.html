@@ -22,13 +22,15 @@
             <button id="7" onclick="calc(id)">7</button>
             <button id="8" onclick="calc(id)">8</button>
             <button id="9" onclick="calc(id)">9</button>
-            <button id="%" onclick="calc(id)">%</button>
+            <button id="D" onclick="calc(id)">&divide</button>
+            <button id="C" onclick="calc(id)">C</button>
         </div>
         <div class="row">
             <button id="4" onclick="calc(id)">4</button>
             <button id="5" onclick="calc(id)">5</button>
             <button id="6" onclick="calc(id)">6</button>
             <button id="X" onclick="calc(id)">X</button>
+            <button id="%" onclick="calc(id)">%</button>
         </div>
         <div class="row">
             <button id="1" onclick="calc(id)">1</button>
@@ -41,11 +43,21 @@
             <button id="." onclick="calc(id)">.</button>
             <button id="+" onclick="calc(id)">+</button>
             <button id="=" onclick="calc(id)">=</button>
+            <button id="+/-" onclick="calc(id)">+/-</button>
         </div>
     </div>
     <script>
+        var num = '';
+        var sum = 0;
+        var lastNum = 0;
+        var lastOperator = '';
+
         function calc(id) {
-            //console.log(id);        
+            if(id == 'C') {
+                document.getElementById('screen').innerHTML = '';
+                id = '';
+            }
+            //console.log(id);  
             document.getElementById('screen').innerHTML += id;
         }
     </script>
