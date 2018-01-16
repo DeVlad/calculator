@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
     <div id="frame">
         <div id="screen" dir="rtl"></div>
         <div class="row">
@@ -37,6 +38,7 @@
             <button id="2" onclick="calc(id)">2</button>
             <button id="3" onclick="calc(id)">3</button>
             <button id="-" onclick="calc(id)">-</button>
+            <button id="-" onclick="calc(id)">M</button>
         </div>
         <div class="row">
             <button id="0" onclick="calc(id)">0</button>
@@ -46,17 +48,24 @@
             <button id="sign" onclick="calc(id)">&plusmn;</button>
         </div>
     </div>
+    </div>
+    
+    
     <script>
         var num = '';
         var sum = 0;
         var lastNum = 0;
         var lastOperator = '';
-
-        function calc(id) {
+        var display = '';
+        function calc(id) {            
             if(id == 'C') {
                 document.getElementById('screen').innerHTML = '';
                 id = '';
             }
+            
+            /*switch(id){
+                    case
+            }*/
             //console.log(id);  
             document.getElementById('screen').innerHTML += id;
         }
