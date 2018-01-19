@@ -18,6 +18,8 @@
     "grunt-postcss": "^0.8.0",
     "grunt-processhtml": "^0.4.1",
     "grunt-w3c-html-validation": ">=0.1.8"
+  },
+  "dependencies": {
+    "pixrem": "^4.0.1"
   }
-
 }
