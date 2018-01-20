@@ -24,8 +24,8 @@ var buttons = { // Button : Id
 
 function Calculator() {
     this.result = 0;
-    this.lastOperator = null;
-    this.lastNum = 0;
+    this.operator = null;
+    this.operand = null;    
     this.osd = '';
     this.initEvents(buttons);
 }
@@ -49,53 +49,33 @@ Calculator.prototype.initEvents = function (buttons) {
 
     document.getElementById(buttons.back).addEventListener("click", this.back.bind(this));
     document.getElementById(buttons.clear).addEventListener("click", this.clear.bind(this));
-
-    //document.getElementById(buttons.multiply).addEventListener("click", this.getOperator.bind(this, '*'));
 };
 
 Calculator.prototype.getNumber = function (number) {
-    //console.log(number);
-    //this.lastNum = number;    
+    //console.log(number);   
     this.osd += number;
     this.display();
 };
 
-/*Calculator.prototype.getOperator = function (operator) {
-    if (this.lastOperator === null) {
-        this.lastOperator = operator;
-        this.lastNum = Number(this.osd);        
-    } else {        
-    }    
-   
-    this.display();
-};*/
-
 Calculator.prototype.add = function () {
+    this.operator = '-';
     console.log('add');
-    this.lastNum = Number(this.osd);
-    this.osd = '';
-    this.display();
-
-    // this.result = this.lastNum + Number(this.ocd);
-    console.log('Result', this.result);
-    this.lastNum = this.osd;
-    console.log('lastNum', this.lastNum);
-    //this.osd = this.result;
-    this.display();
+    
+    // this.display();
 };
 
 Calculator.prototype.subtract = function () {
-    this.lastOperator = '-';
+    this.operator = '-';
     console.log('subtract');
 };
 
 Calculator.prototype.multiply = function () {
-    this.lastOperator = '*';
+    this.operator = '*';
     console.log('multiply');
 };
 
 Calculator.prototype.divide = function () {
-    this.lastOperator = '/';
+    this.operator = '/';
     console.log('divide');
 };
 
@@ -107,8 +87,8 @@ Calculator.prototype.back = function () {
 Calculator.prototype.clear = function () {
     console.log('clear');
     this.result = 0;
-    this.lastOperator = null;
-    this.lastNum = 0;
+    this.operator = null;
+    this.operand = 0;
     this.osd = '';
     this.display();
 };
